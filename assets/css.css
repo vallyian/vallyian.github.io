@@ -1,0 +1,25 @@
+html {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    color: white;
+    background-color: black;
+}
+
+body .bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url("bg.png");
+    background-position: center;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
