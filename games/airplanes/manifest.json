@@ -1,15 +1,1 @@
-{
-    "name": "Airplanes",
-    "short_name": "Airplanes",
-    "icons": [
-        {
-            "src": "favicon.png",
-            "type": "image/png",
-            "sizes": "200x200"
-        }
-    ],
-    "display": "standalone",
-    "start_url": ".",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
-}
+{"name":"Airplanes","short_name":"Airplanes","icons":[{"src":"favicon.png","type":"image/png","sizes":"200x200","purpose":"any maskable"}],"display":"standalone","start_url":".","theme_color":"#000000","background_color":"#ffffff"}
