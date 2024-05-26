@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>PlanView</title>
+    </head>
+    <body>
+        <div>Company domain: <input id="domain" type="text">.com</div>
+        <div>PlanView resourceCode: <input id="code" type="text"></div>
+        <div id="script"></div>
+
+        <style>
+            div { padding: 5px; }
+            #code, #domain { width: 60px; text-align: center; }
+            #script {
+                font-family: 'Courier New', Courier, monospace;
+                color: blue;
+                white-space: pre;
+            }
+        </style>
+
+        <script id="nav">
+            const defaultDomain = "earths";
+            const defaultCode = 32035;
+
+            const domain = document.querySelector("#domain");
+            const code = document.querySelector("#code");
+
+            domain.value = localStorage.getItem("domain") || defaultDomain;
+            code.value = localStorage.getItem("code") || defaultCode;
+
+            domain.onchange = () => localStorage.setItem(`domain`, domain.value) && nav();
+            code.onchange = () => localStorage.setItem(`code`, code.value);
+
+            if (domain.value !== defaultDomain) nav();
+
+            function nav() {
+                const win = open(`https://secure.${domain.value}.com`);
+                setTimeout(() => {
+                    win.close();
+                    location = 
+                        `https://secure.${domain.value}.com/` +
+                        `http/planview.${domain.value}.com/planview/` +
+                        `Track/Time/PickPeriod?resourceCode=${code.value}`;
+                }, 3000);
+            }
+        </script>
+
+        <script>
+            document.querySelector("#script").innerHTML = document.querySelector("#nav").innerHTML.replace(/\n {12}/g, "\n");
+        </script>
+    </body>
+</html>
